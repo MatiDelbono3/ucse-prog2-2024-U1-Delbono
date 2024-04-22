@@ -1,15 +1,15 @@
 package Productos;
 
 public class SelectordeProductos {
-    public Producto SeleccionarProducto(TiposProducto tipoProducto) {
+    public FabricaProductos SeleccionarProducto(TiposProducto tipoProducto) {
         if (tipoProducto==TiposProducto.ROPA) {
-            return new Ropa();
+            return new FabricaRopa();
         }
         else if (tipoProducto == TiposProducto.ELECTRONICA) {
-            return new Electronica();
+            return new FabricaElectronica();
         }
         else {
-            return new Vehiculos();
+            return new FabricaVehiculos();
         }
 
     }
