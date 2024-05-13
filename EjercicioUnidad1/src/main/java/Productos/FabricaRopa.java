@@ -2,7 +2,7 @@ package Productos;
 
 public class FabricaRopa extends FabricaProductos{
     @Override
-    public Producto CrearProducto() {
+    public product CrearProducto() {
         return new Ropa();
         }
     }

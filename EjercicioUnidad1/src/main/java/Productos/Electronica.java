@@ -1,10 +1,10 @@
 package Productos;
 
-public class Electronica implements Producto{
+public class Electronica extends product implements Producto{
     private String Marca;
     private String Modelo;
     private int Memoria;
-
+    private double Precio;
     public String getMarca() {
         return Marca;
     }
@@ -31,6 +31,14 @@ public class Electronica implements Producto{
 
     @Override
     public double ObtenerPrecio() {
-        return 0;
+        return 150000;
+    }
+
+    public double getPrecio() {
+        return Precio;
+    }
+
+    public void setPrecio(double precio) {
+        Precio = precio;
     }
 }

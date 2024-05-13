@@ -2,7 +2,7 @@ package Productos;
 import Productos.Producto;
 public class FabricaVehiculos extends FabricaProductos{
     @Override
-    public Producto CrearProducto() {
+    public product CrearProducto() {
         return new Vehiculos();
     }
 }

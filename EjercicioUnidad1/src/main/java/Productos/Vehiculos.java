@@ -1,12 +1,12 @@
 package Productos;
 
-public class Vehiculos implements Producto{
+public class Vehiculos extends product implements Producto{
     private String Tipo;
     private String Marca;
     private String Modelo;
     private int Cilindrada;
     private int Version;
-
+    private double Precio;
     public String getTipo() {
         return Tipo;
     }
@@ -49,6 +49,6 @@ public class Vehiculos implements Producto{
 
     @Override
     public double ObtenerPrecio() {
-        return 0;
+        return 2000000;
     }
 }

@@ -1,6 +1,6 @@
 package Productos;
 
-public class Ropa implements Producto  {
+public class Ropa extends product implements Producto  {
     private double Precio;
     private String Modelo;
     private int Talle;
@@ -41,6 +41,6 @@ public class Ropa implements Producto  {
 
     @Override
     public double ObtenerPrecio() {
-        return 0;
+        return 3500;
     }
 }
