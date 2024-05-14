@@ -12,16 +12,32 @@ Pagos: paquete utilizado para el manejo de los pagos.
 
 INTERFACES:
 
-Producto: interfaz a utilizar para la implementación del patrón Factory Method
+Producto: interfaz a utilizar para la implementación del patrón Factory Method. Posee un método obtenerPrecio.
 
-EstrategiaDeEnvio: interfaz a utilizar para la implementación del patrón Bridge
+EstrategiaDeEnvio: interfaz a utilizar para la implementación del patrón Bridge. Posee un método CalcularCosto.
 
 IngresoDePagos: interfaz a utilizar para la implementación del patrón Strategy
 
 CLASES:
+Patrón Factory Method:
+
 product: contiene los datos comunes a todos los productos.
-FabricaProductos: contiene un método CrearProducto, el cual es implementado por las siguientes subclases:
+Existen también  3 clases, que corresponden a los diferentes tipos de producto. Cada una implementa la interfaz Producto. Éstas son:
+- Ropa
+- Electronica
+- Vehiculos
+  
+Se tiene además una clase FabricaProductos, que contiene un método CrearProducto, el cual es implementado por las siguientes subclases:
 - FabricaRopa
 - FabricaElectronica
-- FabricaVehiculos
+- FabricaVehiculos.
+
+Patrón Bridge:
+
+CalculosDelEnvio: contiene los datos comunes a todo envío, además de una instancia de EstrategiasDeEnvio.
+Existen 3 clases, referidas a los distintos tipos de Envíos, que implementan la interfaz EstrategiasDeEnvio. Las mismas son:
+- EnvioPorTierra
+- EnvioPorBarco
+- EnvioPorAvion
   
+Patrón Strategy
