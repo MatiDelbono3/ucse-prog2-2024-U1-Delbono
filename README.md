@@ -49,6 +49,7 @@ Patrón Strategy:
 Existe una clase ManejadorDePagos, la cual posee una instancia de la interfaz IngresoDePagos , y un método ProcesadorDePagos.
 Además se tiene una clase abstracta ProcesadorDePagos, la cual contiene dos métodos abstractos, ProcesarPago y ReintegrarPagos.
 Se aprecia también una clase para cada método de procesamiento de pagos. Cada una de ellas hereda de la clase ProcesadorDePagos. Las mencionadas clases son:
+
 -ProcesadorDePagosPayPal
 -ProcesadorDePagosMercadoPago
 
