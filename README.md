@@ -16,10 +16,15 @@ Producto: interfaz a utilizar para la implementación del patrón Factory Method
 
 EstrategiaDeEnvio: interfaz a utilizar para la implementación del patrón Bridge. Posee un método CalcularCosto.
 
-IngresoDePagos: interfaz a utilizar para la implementación del patrón Strategy
+IngresoDePagos: interfaz a utilizar para la implementación del patrón Strategy.
+
+Patrón Factory Method:
+
+INTERFACES:
+
+Producto: Posee un método obtenerPrecio.
 
 CLASES:
-Patrón Factory Method:
 
 product: contiene los datos comunes a todos los productos.
 Existen también  3 clases, que corresponden a los diferentes tipos de producto. Cada una implementa la interfaz Producto. Éstas son:
@@ -32,9 +37,23 @@ Se tiene además una clase FabricaProductos, que contiene un método CrearProduc
 - FabricaElectronica
 - FabricaVehiculos.
 
+ENUMERADORES:
+
 Se tiene también un enumerador para los tipos de producto.
 
+
+//////ADICIÓN DE UN NUEVO TIPO DE PRODUCTO
+
+En cuanto a la adición de un tipo de producto podemos decir que, créandose los mismos a través de un Selector de productos al que se pasa como parámetro el TIPO, proveniente de un ENUM, al agregar un tipo al mismo, y, conntextualmente, un anidamiento del IF en el selector, el producto se agregaría.
+
+
 Patrón Bridge:
+
+INTERFACES:
+
+EstrategiaDeEnvio: Posee un método CalcularCosto.
+
+CLASES:
 
 CalculosDelEnvio: contiene los datos comunes a todo envío, además de una instancia de EstrategiasDeEnvio.
 Existen 3 clases, referidas a los distintos tipos de Envíos, que implementan la interfaz EstrategiasDeEnvio. Las mismas son:
@@ -42,9 +61,22 @@ Existen 3 clases, referidas a los distintos tipos de Envíos, que implementan la
 - EnvioPorBarco
 - EnvioPorAvion.
 
-Se nota también un enumerador para las formas de envío
+ENUMERADORES:
+
+Se nota también un enumerador para las formas de envío.
+
+///////MODIFICACIÓN DEL COSTO DE ENVÍO DE UNA ESTRATEGIA PARTICULAR
+
+Al calcularse el costo de envío, para cada estrategia, a través de un método abstracto, modificando la sobreescritura del mismo en la subclase que desea cambiarse, se modifica el costo de envío correspondiente. 
+
   
 Patrón Strategy:
+
+INTERFACES:
+
+IngresoDePagos: Posee dos métodos: autorizar y capturar.
+
+CLASES:
 
 Existe una clase ManejadorDePagos, la cual posee una instancia de la interfaz IngresoDePagos , y un método ProcesadorDePagos.
 Además se tiene una clase abstracta ProcesadorDePagos, la cual contiene dos métodos abstractos, ProcesarPago y ReintegrarPagos.
@@ -57,4 +89,10 @@ Tenemos también una clase de Ingreso de Pagos para cada metodología. Cada clas
 -IngresoDePagosPayPal
 -IngresoDePagosMercadoPago.
 
+ENUMERADORES
+
 En última instancia, se utiliza un enumerador para los tipos de pago.
+
+//////AGREGADO DE UN NUEVO TIPO DE PAGO
+
+
