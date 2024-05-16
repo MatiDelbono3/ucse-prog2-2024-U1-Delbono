@@ -32,12 +32,28 @@ Se tiene además una clase FabricaProductos, que contiene un método CrearProduc
 - FabricaElectronica
 - FabricaVehiculos.
 
+Se tiene también un enumerador para los tipos de producto.
+
 Patrón Bridge:
 
 CalculosDelEnvio: contiene los datos comunes a todo envío, además de una instancia de EstrategiasDeEnvio.
 Existen 3 clases, referidas a los distintos tipos de Envíos, que implementan la interfaz EstrategiasDeEnvio. Las mismas son:
 - EnvioPorTierra
 - EnvioPorBarco
-- EnvioPorAvion
+- EnvioPorAvion.
+
+Se nota también un enumerador para las formas de envío
   
-Patrón Strategy
+Patrón Strategy:
+
+Existe una clase ManejadorDePagos, la cual posee una instancia de la interfaz IngresoDePagos , y un método ProcesadorDePagos.
+Además se tiene una clase abstracta ProcesadorDePagos, la cual contiene dos métodos abstractos, ProcesarPago y ReintegrarPagos.
+Se aprecia también una clase para cada método de procesamiento de pagos. Cada una de ellas hereda de la clase ProcesadorDePagos. Las mencionadas clases son:
+-ProcesadorDePagosPayPal
+-ProcesadorDePagosMercadoPago
+
+Tenemos también una clase de Ingreso de Pagos para cada metodología. Cada clase hereda de ProcesadorDePagos e implementa la interfaz IngresoDePagos. Dichas clases son:
+-IngresoDePagosPayPal
+-IngresoDePagosMercadoPago.
+
+En última instancia, se utiliza un enumerador para los tipos de pago.
