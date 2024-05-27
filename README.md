@@ -44,7 +44,7 @@ Se tiene también un enumerador para los tipos de producto.
 
 //////ADICIÓN DE UN NUEVO TIPO DE PRODUCTO
 
-En cuanto a la adición de un tipo de producto podemos decir que, créandose los mismos a través de un Selector de productos al que se pasa como parámetro el TIPO, proveniente de un ENUM, al agregar un tipo al mismo, y, conntextualmente, un anidamiento del IF en el selector, el producto se agregaría.
+En cuanto a la adición de un tipo de producto podemos decir que, créandose los mismos a través de un Selector de productos al que se pasa como parámetro el TIPO, proveniente de un ENUM, al agregar un tipo al mismo, y, contextualmente, un anidamiento del IF en el selector, el producto se agregaría.
 
 
 Patrón Bridge:
@@ -94,5 +94,7 @@ ENUMERADORES
 En última instancia, se utiliza un enumerador para los tipos de pago.
 
 //////AGREGADO DE UN NUEVO TIPO DE PAGO
+
+Para realizar esta acción se debe, en primer lugar, agregar el mismo al ENUM, y luego crear una nueva clase que procese los pagos realizados a través del nuevo método
 
 
