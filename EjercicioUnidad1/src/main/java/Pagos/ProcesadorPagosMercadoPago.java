@@ -1,17 +1,14 @@
 package Pagos;
 
 public class ProcesadorPagosMercadoPago extends ProcesadorDePagos{
-    public ProcesadorPagosMercadoPago(IngresodePagos ingresodePagos) {
-        super(ingresodePagos);
-    }
 
     @Override
-    public void ProcesarPago(int Monto) {
+    public void ProcesarPago(double Monto) {
         System.out.println("Procesando un pago con MercadoPago de" + Monto);
     }
 
     @Override
-    public void ReintegrarPagos(int MontoReintegro) {
+    public void ReintegrarPagos(double MontoReintegro) {
         System.out.println("Reintegrando a través de MercadoPago " +MontoReintegro);
     }
 

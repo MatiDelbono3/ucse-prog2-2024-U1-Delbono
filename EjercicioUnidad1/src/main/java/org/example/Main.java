@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import Pagos.ProcesadorPagosMercadoPago;
+import Pagos.ProcesadorPagosPayPal;
 import Productos.*;
 import Envios.*;
 
@@ -17,6 +19,7 @@ public class Main {
 
         System.out.println("Ingrese un Código de producto");
         int CodigoProducto= Integer.parseInt(lector.readLine());
+        double PrecioTotal=0;
         while (CodigoProducto!=0) {
 
             if (CodigoProducto == 1) {
@@ -95,15 +98,31 @@ public class Main {
             CalculosDelEnvio envioAvion = new CalculosDelEnvio(150000, 300, 2100, "Rafaela", "Bogota", new EnvioPorAvion());
 
 
+
             if (Metodo == 1) {
-                double PrecioTotal = Precio + envioTierra.CalcularCosto();
+                 PrecioTotal = Precio + envioTierra.CalcularCosto();
                 System.out.println("El precio total es " + PrecioTotal);
             } else if (Metodo == 2) {
-                double PrecioTotal = Precio + envioBarco.CalcularCosto();
+                 PrecioTotal = Precio + envioBarco.CalcularCosto();
                 System.out.println("El precio total es " + PrecioTotal);
             } else if (Metodo==3) {
-                double PrecioTotal = Precio + envioAvion.CalcularCosto();
+                 PrecioTotal = Precio + envioAvion.CalcularCosto();
                 System.out.println("El precio total es " + PrecioTotal);
+            }
+
+
+            // Elegir el método de pago
+
+            System.out.println("Ingrese el método de pago");
+            int MetodoPago= Integer.parseInt(lector.readLine());
+            ProcesadorPagosMercadoPago PagoMercadoPago=new ProcesadorPagosMercadoPago();
+            ProcesadorPagosPayPal PagoPayPal=new ProcesadorPagosPayPal();
+            if (MetodoPago==1) {
+
+                PagoMercadoPago.ProcesarPago(PrecioTotal);
+            }
+            else if (MetodoPago==2) {
+                PagoPayPal.ProcesarPago(PrecioTotal);
             }
 
 
